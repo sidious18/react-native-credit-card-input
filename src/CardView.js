@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from "react";
+import React, { Component } from "react";
 import {
   View,
   Image,
@@ -7,6 +7,7 @@ import {
   Platform,
 } from "react-native";
 
+import PropTypes from "prop-types";
 import defaultIcons from "./Icons";
 import FlipCard from "react-native-flip-card";
 
