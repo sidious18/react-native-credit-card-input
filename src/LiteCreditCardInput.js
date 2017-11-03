@@ -137,10 +137,14 @@ export default class LiteCreditCardInput extends Component {
     return "placeholder";
   }
 
+  _renderProperIcon(icon) {
+    if(Icons[icon] && Icons[icon].uri) return Icons[icon].uri;
+    return Icons['placeholder'].uri
+  }
+
   render() {
     const { focused, values: { number }, inputStyle, status: { number: numberStatus } } = this.props;
     const showRightPart = focused && focused !== "number";
-
     return (
       <View style={s.container}>
         <View style={[
@@ -152,7 +156,7 @@ export default class LiteCreditCardInput extends Component {
         </View>
         <TouchableOpacity onPress={showRightPart ? this._focusNumber : this._focusExpiry }>
           <Image style={s.icon}
-              source={{ uri: Icons[this._iconToShow()].uri }} />
+              source={{ uri: this._renderProperIcon(this._iconToShow()) }} />
         </TouchableOpacity>
         <View style={[
           s.rightPart,
