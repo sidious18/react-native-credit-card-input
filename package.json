@@ -1,6 +1,6 @@
 {
   "name": "react-native-credit-card-input-battery",
-  "version": "0.3.34",
+  "version": "0.3.35",
   "description": "React native credit card input component",
   "main": "index.js",
   "scripts": {
